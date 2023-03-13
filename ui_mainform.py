@@ -31,25 +31,17 @@ class Ui_MainWindow(object):
         self.centralwidget.setObjectName(u"centralwidget")
         self.verticalLayout = QVBoxLayout(self.centralwidget)
         self.verticalLayout.setObjectName(u"verticalLayout")
-        self.horizontalLayout = QHBoxLayout()
-        self.horizontalLayout.setObjectName(u"horizontalLayout")
         self.listView = QListView(self.centralwidget)
         self.listView.setObjectName(u"listView")
 
-        self.horizontalLayout.addWidget(self.listView)
+        self.verticalLayout.addWidget(self.listView)
 
+        self.horizontalLayout = QHBoxLayout()
+        self.horizontalLayout.setObjectName(u"horizontalLayout")
         self.pushButton = QPushButton(self.centralwidget)
         self.pushButton.setObjectName(u"pushButton")
 
         self.horizontalLayout.addWidget(self.pushButton)
-
-        self.listView_2 = QListView(self.centralwidget)
-        self.listView_2.setObjectName(u"listView_2")
-
-        self.horizontalLayout.addWidget(self.listView_2)
-
-
-        self.verticalLayout.addLayout(self.horizontalLayout)
 
         self.progressBar = QProgressBar(self.centralwidget)
         self.progressBar.setObjectName(u"progressBar")
@@ -57,7 +49,10 @@ class Ui_MainWindow(object):
         self.progressBar.setTextVisible(True)
         self.progressBar.setInvertedAppearance(False)
 
-        self.verticalLayout.addWidget(self.progressBar)
+        self.horizontalLayout.addWidget(self.progressBar)
+
+
+        self.verticalLayout.addLayout(self.horizontalLayout)
 
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
